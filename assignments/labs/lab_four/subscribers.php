@@ -11,6 +11,15 @@ require "includes/connect.php";
   5. Fetch all results into $subscribers
 */
 
+$sql = "SELECT id, first_name, last_name, email, subscribed_at
+        FROM subscribers
+        ORDER BY subscribed_at DESC";
+
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$subscribers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 $subscribers = []; // placeholder
 ?>
 
@@ -32,6 +41,15 @@ $subscribers = []; // placeholder
       </thead>
       <tbody>
         <!-- TODO: Loop through $subscribers and output each row -->
+         <?php foreach ($subscribers as $subscriber): ?>
+          <tr>
+            <td><?php echo htmlspecialchars($subscriber['id']); ?></td>
+            <td><?php echo htmlspecialchars($subscriber['first_name']); ?></td>
+            <td><?php echo htmlspecialchars($subscriber['last_name']); ?></td>
+            <td><?php echo htmlspecialchars($subscriber['email']); ?></td>
+            <td><?php echo htmlspecialchars($subscriber['subscribed_at']); ?></td>
+          </tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
   <?php endif; ?>
