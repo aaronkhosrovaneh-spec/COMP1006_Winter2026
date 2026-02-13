@@ -1,8 +1,21 @@
 <?php
 require "includes/header.php";
-//  TODO: connect to the database 
+
+//  TODO: connect to the database
+$dsn = "mysql:host=$host;dbname=$db";
+
+try {
+   $pdo = new PDO ($dsn, $user, $password); 
+   $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+}
+catch(PDOException $e) {
+    die("Database connection failed: " . $e->getMessage()); 
+}
 
 //   TODO: Grab form data (no validation or sanitization for this lab)
+$firstName = $_POST['first_name'];
+$lastName = $_POST['last_name'];
+$email = $_POST['email'];
 
 /*
   1. Write an INSERT statement with named placeholders
@@ -11,6 +24,15 @@ require "includes/header.php";
   4.
 
 */
+
+$sql = "INSERT INTO subscribers (first_name, last_name, email) VALUES (:first_name, :last_name, :email)";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([
+    ':first_name' => $firstName,
+    ':last_name' => $lastName,
+    ':email' => $email
+]);
+
 
 ?>
 <!DOCTYPE html>
@@ -29,7 +51,7 @@ require "includes/header.php";
 
         <!-- TODO: Display a confirmation message -->
         <!-- Example: "Thanks, Name! You have been added to our mailing list." -->
-
+        <p>Thanks, <?= htmlspecialchars($firstName) ?>! You have been added to our mailing list.</p>
 
         <p class="mt-3">
             <a href="subscribers.php">View Subscribers</a>
