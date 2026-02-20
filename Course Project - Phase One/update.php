@@ -36,5 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <option value="Medium" <?php if($task['priority'] == 'Medium') echo 'selected'; ?>>Medium Priority</option>
             <option value="High" <?php if($task['priority'] == 'High') echo 'selected'; ?>>High Priority</option>
         </select>
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary">Update Task</button>
     </div>
 </form>
