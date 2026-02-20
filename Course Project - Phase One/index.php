@@ -25,3 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_task'])) {
         ':due_date' => $due_date,
         ':time' => $time
     ]);
+}
+
+// Fetch all tasks
+$stmt = $pdo->query("SELECT * FROM tasks ORDER BY due_date ASC");
