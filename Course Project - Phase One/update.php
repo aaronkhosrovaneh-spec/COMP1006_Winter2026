@@ -9,3 +9,6 @@ $stmt = $pdo->prepare("SELECT * FROM tasks WHERE id = ?");
 
 // Execute query
 $stmt->execute([$id]);
+
+// Fetch task data
+$task = $stmt->fetch();
