@@ -13,3 +13,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_task'])) {
     // SQL query using named placeholders
     $sql = "INSERT INTO tasks (name, category, priority, due_date, time)
             VALUES (:name, :category, :priority, :due_date, :time)";
+
+    // Prepare statement
+    $stmt = $pdo->prepare($sql);
+
+    // Execute statement
+    $stmt->execute([
+        ':name' => $name,
+        ':category' => $category,
+        ':priority' => $priority,
+        ':due_date' => $due_date,
+        ':time' => $time
+    ]);
