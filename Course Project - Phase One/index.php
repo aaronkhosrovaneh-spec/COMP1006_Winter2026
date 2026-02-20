@@ -78,3 +78,13 @@ $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <!-- Submit button -->
         <button type="submit" name="add_task" class="btn btn-primary">Add Task</button>
     </form>
+
+    <!-- Display task list -->
+    <h2>Your Tasks</h2>
+    <!-- Bootstrap-styled table -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Task</th><th>Category</th><th>Priority</th><th>Due Date</th><th>Time (min)</th><th>Actions</th>
+            </tr>
+        </thead>
