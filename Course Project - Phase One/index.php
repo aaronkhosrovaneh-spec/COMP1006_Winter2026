@@ -45,3 +45,12 @@ $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <!-- Task creation form -->
     <h2>Add New Task</h2>
     <form method="post" class="mb-5">
+        <!-- Task name -->
+        <div class="mb-3">
+            <input type="text" name="name" class="form-control" placeholder="Task Name" required>
+        </div>
+
+        <!-- Task category -->
+        <div class="mb-3">
+            <input type="text" name="category" class="form-control" placeholder="Category">
+        </div>
