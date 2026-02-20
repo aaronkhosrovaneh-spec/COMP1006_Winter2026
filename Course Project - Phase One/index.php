@@ -54,3 +54,13 @@ $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="mb-3">
             <input type="text" name="category" class="form-control" placeholder="Category">
         </div>
+
+        <!-- Priority selection -->
+        <div class="mb-3">
+            <label for="priority" class="form-label">Priority Level</label>
+            <select name="priority" id="priority" class="form-select">
+                <option value="Low">Low Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="High">High Priority</option>
+            </select>
+        </div>
