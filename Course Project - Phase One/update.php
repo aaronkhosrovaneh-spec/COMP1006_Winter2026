@@ -21,5 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $pdo->prepare($sql)->execute([
         $_POST['name'], $_POST['category'], $_POST['priority'], $_POST['due_date'], $_POST['time'], $id
     ]);
+    // Redirect user to main page
+    header("Location: index.php");
 }
 ?>
