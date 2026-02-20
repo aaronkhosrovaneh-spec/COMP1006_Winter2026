@@ -42,3 +42,6 @@ $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <!-- Bootstrap container -->
 <body class="container mt-5">
+    <!-- Task creation form -->
+    <h2>Add New Task</h2>
+    <form method="post" class="mb-5">
