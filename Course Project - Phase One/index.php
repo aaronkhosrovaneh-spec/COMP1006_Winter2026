@@ -88,3 +88,7 @@ $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <th>Task</th><th>Category</th><th>Priority</th><th>Due Date</th><th>Time (min)</th><th>Actions</th>
             </tr>
         </thead>
+        <tbody>
+            <!-- Loop through tasks and display them -->
+            <?php foreach ($tasks as $task): ?>
+            <tr>
