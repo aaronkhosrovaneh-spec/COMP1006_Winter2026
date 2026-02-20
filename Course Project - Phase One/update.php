@@ -25,3 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header("Location: index.php");
 }
 ?>
+
+<!-- Task update form -->
+<form method="post">
+</form>
