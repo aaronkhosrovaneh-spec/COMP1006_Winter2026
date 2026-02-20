@@ -74,3 +74,7 @@ $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="mb-3">
             <input type="number" name="time" class="form-control" placeholder="Time Spent (minutes)">
         </div>
+
+        <!-- Submit button -->
+        <button type="submit" name="add_task" class="btn btn-primary">Add Task</button>
+    </form>
