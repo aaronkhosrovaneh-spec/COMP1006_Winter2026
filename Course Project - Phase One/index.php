@@ -64,3 +64,8 @@ $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <option value="High">High Priority</option>
             </select>
         </div>
+        
+        <!-- Due date -->
+        <div class="mb-3">
+            <input type="date" name="due_date" class="form-control">
+        </div>
