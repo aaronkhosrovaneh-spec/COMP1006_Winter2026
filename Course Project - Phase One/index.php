@@ -92,3 +92,9 @@ $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <!-- Loop through tasks and display them -->
             <?php foreach ($tasks as $task): ?>
             <tr>
+                <!-- Output task values -->
+                <td><?= $task['name'] ?></td>
+                <td><?= $task['category'] ?></td>
+                <td><?= $task['priority'] ?></td>
+                <td><?= $task['due_date'] ?></td>
+                <td><?= $task['time'] ?></td>
