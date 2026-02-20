@@ -28,4 +28,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!-- Task update form -->
 <form method="post">
+    <!-- Priority selection -->
+    <div class="mb-3">
+        <label for="priority" class="form-label">Priority Level</label>
+        <select name="priority" id="priority" class="form-select">
+            <option value="Low" <?php if($task['priority'] == 'Low') echo 'selected'; ?>>Low Priority</option>
+            <option value="Medium" <?php if($task['priority'] == 'Medium') echo 'selected'; ?>>Medium Priority</option>
+            <option value="High" <?php if($task['priority'] == 'High') echo 'selected'; ?>>High Priority</option>
+        </select>
+    </div>
 </form>
