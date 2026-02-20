@@ -17,5 +17,9 @@ $task = $stmt->fetch();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // SQL query to update task values
     $sql = "UPDATE tasks SET name = ?, category = ?, priority = ?, due_date = ?, time = ? WHERE id = ?";
+    // Prepare and execute update statement
+    $pdo->prepare($sql)->execute([
+        $_POST['name'], $_POST['category'], $_POST['priority'], $_POST['due_date'], $_POST['time'], $id
+    ]);
 }
 ?>
