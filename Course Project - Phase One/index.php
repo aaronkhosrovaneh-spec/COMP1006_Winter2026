@@ -69,3 +69,8 @@ $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="mb-3">
             <input type="date" name="due_date" class="form-control">
         </div>
+
+        <!-- Time spent in minutes -->
+        <div class="mb-3">
+            <input type="number" name="time" class="form-control" placeholder="Time Spent (minutes)">
+        </div>
