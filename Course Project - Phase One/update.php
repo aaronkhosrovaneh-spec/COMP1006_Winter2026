@@ -15,5 +15,7 @@ $task = $stmt->fetch();
 
 // Check if form was submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // SQL query to update task values
+    $sql = "UPDATE tasks SET name = ?, category = ?, priority = ?, due_date = ?, time = ? WHERE id = ?";
 }
 ?>
