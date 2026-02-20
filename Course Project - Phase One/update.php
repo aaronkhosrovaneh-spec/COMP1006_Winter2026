@@ -6,3 +6,6 @@ $id = $_GET['id'];
 
 // Prepare statement
 $stmt = $pdo->prepare("SELECT * FROM tasks WHERE id = ?");
+
+// Execute query
+$stmt->execute([$id]);
