@@ -98,3 +98,15 @@ $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <td><?= $task['priority'] ?></td>
                 <td><?= $task['due_date'] ?></td>
                 <td><?= $task['time'] ?></td>
+                <td>
+                    <!-- Link to edit page -->
+                    <a href="edit.php?id=<?= $task['id'] ?>" class="btn btn-sm btn-warning">Update</a>
+                    <!-- Link to delete page -->
+                    <a href="delete.php?id=<?= $task['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Delete task?')">Delete</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</body>
+</html>
