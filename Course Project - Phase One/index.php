@@ -33,3 +33,12 @@ $stmt = $pdo->query("SELECT * FROM tasks ORDER BY due_date ASC");
 // Retrieve results
 $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Time Tracker</title>
+</head>
+<!-- Bootstrap container -->
+<body class="container mt-5">
