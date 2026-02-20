@@ -12,3 +12,8 @@ $stmt->execute([$id]);
 
 // Fetch task data
 $task = $stmt->fetch();
+
+// Check if form was submitted
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+}
+?>
