@@ -38,3 +38,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+<!-- Include the Google reCAPTCHA script -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
