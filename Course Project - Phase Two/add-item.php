@@ -21,3 +21,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Move the uploaded file from temp to the uploads folder
     if (move_uploaded_file($tmpName, $uploadPath)) {
+        // Insert item name and image filename into the database
+        $sql = "INSERT INTO items (name, image) VALUES (:name, :image)";
+        $stmt = $db->prepare($sql);
+        $stmt->execute([
+            'name' => $itemName, 
+            'image' => $imageName
+        ]);
