@@ -9,3 +9,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password']; 
     // Get the reCAPTCHA response from the form
     $recaptchaResponse = $_POST['g-recaptcha-response'];
+    $secretKey = "YOUR_SECRET_KEY";
