@@ -14,3 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->execute(['username' => $username]);
     // Fetch the user record as an associative array
     $user = $stmt->fetch();
+
+    if ($user && password_verify($password, $user['password'])) {
+        // Set session variables for the logged-in user
+        $_SESSION['userId'] = $user['userId'];
+        $_SESSION['username'] = $user['username'];
