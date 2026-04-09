@@ -11,3 +11,5 @@ if (!isset($_SESSION['userId'])) {
 
 // Check if the form was submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Sanitize the item name to prevent XSS attacks
+    $itemName = filter_input(INPUT_POST, 'itemName', FILTER_SANITIZE_SPECIAL_CHARS);
