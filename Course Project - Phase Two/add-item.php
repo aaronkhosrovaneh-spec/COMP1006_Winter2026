@@ -13,3 +13,8 @@ if (!isset($_SESSION['userId'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Sanitize the item name to prevent XSS attacks
     $itemName = filter_input(INPUT_POST, 'itemName', FILTER_SANITIZE_SPECIAL_CHARS);
+
+    // File upload handling
+    $imageName = $_FILES['photo']['name'];
+    $tmpName = $_FILES['photo']['tmp_name'];
+    $uploadPath = 'uploads/' . $imageName;
