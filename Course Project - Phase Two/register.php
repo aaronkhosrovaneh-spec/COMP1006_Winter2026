@@ -32,3 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Redirect to the login page after successful registration
         header("Location: login.php");
     }
+    else {
+        // If reCAPTCHA failed, show an error
+        echo "Please verify you are not a robot.";
+    }
+}
+?>
