@@ -28,3 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'name' => $itemName, 
             'image' => $imageName
         ]);
+        // Confirm successful upload to the user
+        echo "Item added successfully!";
+    }
+}
+?>
