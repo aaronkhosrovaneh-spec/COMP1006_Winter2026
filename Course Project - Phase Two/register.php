@@ -10,3 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get the reCAPTCHA response from the form
     $recaptchaResponse = $_POST['g-recaptcha-response'];
     $secretKey = "YOUR_SECRET_KEY";
+
+    // Verify the reCAPTCHA response by sending it to Google
+    $apiResponse = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$recaptchaResponse");
