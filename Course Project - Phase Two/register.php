@@ -24,3 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Prepare an SQL statement to insert the new user
         $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
         $stmt = $db->prepare($sql);
+
+        // Bind the parameters to prevent SQL injection
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $hashedPassword);
