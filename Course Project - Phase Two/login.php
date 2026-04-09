@@ -12,3 +12,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt = $db->prepare($sql);
     // Execute the prepared statement with the username parameter
     $stmt->execute(['username' => $username]);
+    // Fetch the user record as an associative array
+    $user = $stmt->fetch();
