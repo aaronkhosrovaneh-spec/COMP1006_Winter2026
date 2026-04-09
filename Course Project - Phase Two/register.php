@@ -20,3 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($responseData['success']) {
         // Hash the password securely before storing in the database
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        // Prepare an SQL statement to insert the new user
+        $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
+        $stmt = $db->prepare($sql);
