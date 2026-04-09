@@ -18,3 +18,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Check if reCAPTCHA verification was successful
     if ($responseData['success']) {
+        // Hash the password securely before storing in the database
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
