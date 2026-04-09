@@ -40,3 +40,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <!-- Include the Google reCAPTCHA script -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<form method="post">
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+
+    <!-- Google reCAPTCHA widget -->
+    <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+
+    <button type="submit">Register</button>
+</form>
