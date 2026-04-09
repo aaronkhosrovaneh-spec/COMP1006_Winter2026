@@ -33,3 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+<!-- HTML form for adding an item with a file upload -->
+<form method="post" enctype="multipart/form-data">
+    <input type="text" name="itemName" placeholder="Item Name">
+    <input type="file" name="photo">
+    <button type="submit">Upload</button>
+</form>
