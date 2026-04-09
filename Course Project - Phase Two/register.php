@@ -28,3 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':password', $hashedPassword);
         $stmt->execute();
+
+        // Redirect to the login page after successful registration
+        header("Location: login.php");
+    }
