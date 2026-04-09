@@ -7,3 +7,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
     // Get the raw password input
     $password = $_POST['password']; 
+    // Get the reCAPTCHA response from the form
+    $recaptchaResponse = $_POST['g-recaptcha-response'];
