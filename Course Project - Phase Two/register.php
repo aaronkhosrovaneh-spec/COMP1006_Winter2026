@@ -15,3 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $apiResponse = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$recaptchaResponse");
     // Decode the JSON response from Google
     $responseData = json_decode($apiResponse, true);
+
+    // Check if reCAPTCHA verification was successful
+    if ($responseData['success']) {
