@@ -18,3 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $imageName = $_FILES['photo']['name'];
     $tmpName = $_FILES['photo']['tmp_name'];
     $uploadPath = 'uploads/' . $imageName;
+
+    // Move the uploaded file from temp to the uploads folder
+    if (move_uploaded_file($tmpName, $uploadPath)) {
