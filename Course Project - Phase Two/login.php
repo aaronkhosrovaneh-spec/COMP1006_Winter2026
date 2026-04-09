@@ -24,3 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
     else {
+        // Display an error message if credentials are invalid
+        echo "Invalid credentials.";
+    }
+}
+?>
