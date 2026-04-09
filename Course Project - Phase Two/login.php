@@ -10,3 +10,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Prepare SQL query to select the user with the given username
     $sql = "SELECT * FROM users WHERE username = :username";
     $stmt = $db->prepare($sql);
+    // Execute the prepared statement with the username parameter
+    $stmt->execute(['username' => $username]);
